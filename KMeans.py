@@ -17,17 +17,7 @@ def distanceEuclidienne(p1, p2): #distance euclidienne car 2 valeures réelles c
 
 
 def calculate_inertie(x, centroids, cluster_assignement):
-    """
-    Calculer l'inertie (somme des carrés des distances des points au centroïde de leur cluster)
-    
-    Args:
-    x (np.array): Ensemble des points
-    centroids (list): Liste des centroïdes
-    cluster_assignement (list): Attribution des points aux clusters
-    
-    Returns:
-    float: Valeur de l'inertie
-    """
+    """Calculer l'inertie (somme des carrés des distances des points au centroïde de leur cluster)"""
     inertie = 0
     for i, point in enumerate(x):
         cluster = cluster_assignement[i]
@@ -35,18 +25,8 @@ def calculate_inertie(x, centroids, cluster_assignement):
     return inertie
 
 def elbow_method(x, max_k=10):
-    """
-    Méthode Elbow pour déterminer le nombre optimal de clusters
-    
-    Args:
-    x (np.array): Ensemble des points
-    max_k (int): Nombre maximum de clusters à tester
-    
-    Returns:
-    list: Liste des inerties pour différentes valeurs de k
-    """
+    """Méthode Elbow pour déterminer le nombre optimal de clusters """
     inerties = []
-    
     for k in range(1, max_k + 1):
         print(f"Calcul pour k = {k}")
         centroids, cluster_assignement = kmeans(x, k, max_iter=30)
@@ -173,3 +153,4 @@ plt.show()
 df = pd.DataFrame.from_dict(trier_donnees(cluster_assignement), orient='index')
 print("[cluster x nb de noeud = indice de l'element dans le tableau de base]")
 print(df)
+
