@@ -24,10 +24,3 @@ Pour exécuter ce projet, vous avez besoin de **Python 3.x** et des librairies s
 * `matplotlib` (Visualisation)
 * `pandas` (Manipulation de données)
 * `scikit-learn` (Uniquement pour télécharger le dataset MNIST)
-
-### Installation
-
-Installez les dépendances avec pip :
-
-```bash
-pip install numpy matplotlib pandas scikit-learn
