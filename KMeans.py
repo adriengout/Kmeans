@@ -101,6 +101,7 @@ def kmeans(x, k, max_iter=100):
                 print(f"Convergence attein3021te après {iteration + 1} itérations.")
             elif changed < 5:
                 print(f"il y a moins de ({changed}) points qui ont changés de cluster")
+            else:
                 print(f"Nombre maximum d'itérations ({max_iter}) atteint sans convergence.")
             break
             
@@ -110,7 +111,7 @@ def kmeans(x, k, max_iter=100):
     return centroids, cluster_assignement
 
 #EXECTUTION DE LA METHODE ELBOW
-n_samples = 2000
+n_samples = 20
 x_subset = x[:n_samples]
 
 inerties = elbow_method(x_subset)
@@ -170,5 +171,5 @@ plt.show()
 
 #affichage des données triées
 df = pd.DataFrame.from_dict(trier_donnees(cluster_assignement), orient='index')
-
+print("[cluster x nb de noeud = indice de l'element dans le tableau de base]")
 print(df)
